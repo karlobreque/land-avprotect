@@ -1,0 +1,31 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "AVProtect | Seguridad privada y monitoreo CCTV",
+  description = "Empresa de seguridad privada: instalación y monitoreo de cámaras CCTV y guardias de seguridad certificados OS10 para retail y almacenes.",
+} = Astro.props;
+
+const base = import.meta.env.BASE_URL;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    <link rel="icon" href={`${base}favicon.ico`} />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen bg-navy-950 text-slate-200">
+    <slot />
+  </body>
+</html>

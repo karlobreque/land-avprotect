@@ -1,0 +1,65 @@
+---
+const year = new Date().getFullYear();
+
+const nav = [
+  { href: "#servicios", label: "Servicios" },
+  { href: "#nosotros", label: "Nosotros" },
+  { href: "#contacto", label: "Contacto" },
+];
+---
+
+<footer class="border-t border-white/5 bg-navy-950">
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="grid gap-10 md:grid-cols-3">
+      <div>
+        <a href="#inicio" class="flex items-center gap-2.5">
+          <span class="grid h-9 w-9 place-items-center rounded-lg bg-accent/10 ring-1 ring-accent/30">
+            <svg class="h-5 w-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke-linejoin="round" />
+              <path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          <span class="text-lg font-semibold tracking-tight text-white">
+            AV<span class="text-accent">Protect</span>
+          </span>
+        </a>
+        <p class="mt-4 max-w-xs text-sm leading-relaxed text-slate-400">
+          Vigilancia con tecnología CCTV y guardias certificados OS10 para retail,
+          bodegas y almacenes.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-white">Navegación</h3>
+        <ul class="mt-4 space-y-2">
+          {nav.map((link) => (
+            <li>
+              <a href={link.href} class="text-sm text-slate-400 transition hover:text-accent">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-white">Contacto</h3>
+        <ul class="mt-4 space-y-2 text-sm text-slate-400">
+          <li>
+            <a href="tel:+51000000000" class="transition hover:text-accent">+51 000 000 000</a>
+          </li>
+          <li>
+            <a href="mailto:contacto@avprotect.com" class="transition hover:text-accent">contacto@avprotect.com</a>
+          </li>
+          <li>Lima, Perú</li>
+          <li>Atención 24/7</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-10 flex flex-col items-center justify-between gap-3 border-t border-white/5 pt-6 sm:flex-row">
+      <p class="text-xs text-slate-500">© {year} AVProtect. Todos los derechos reservados.</p>
+      <p class="text-xs text-slate-500">Seguridad privada certificada</p>
+    </div>
+  </div>
+</footer>
